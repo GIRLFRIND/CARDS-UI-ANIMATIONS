@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>About Me — Northstar</title>
+  <style>
+    :root {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #17212b;
+      background: #f7f8fa;
+      --ink: #17212b;
+      --muted: #65717d;
+      --accent: #ff9a45;
+      --nav-height: 76px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; }
+    a { color: inherit; text-decoration: none; }
+
+    .site-header {
+      position: sticky;
+      z-index: 2;
+      top: 0;
+      height: var(--nav-height);
+      border-bottom: 1px solid #e4e8ec;
+      background: rgb(255 255 255 / 94%);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      width: min(1120px, calc(100% - 48px));
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 19px;
+      font-weight: 780;
+      letter-spacing: -0.8px;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      border-radius: 10px;
+      color: white;
+      background: var(--ink);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .nav a:last-child {
+      margin-left: auto;
+      color: #d66b19;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    main {
+      width: min(900px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .intro { padding: clamp(72px, 11vw, 130px) 0 64px; }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: #697582;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(44px, 8vw, 78px);
+      font-weight: 650;
+      letter-spacing: -4px;
+      line-height: 1;
+    }
+
+    .intro-copy {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .lesson {
+      margin-bottom: 72px;
+      padding: clamp(25px, 5vw, 48px);
+      border: 1px solid #e4e8ec;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 14px 36px rgb(22 35 48 / 6%);
+    }
+
+    .lesson h2 {
+      margin: 0 0 18px;
+      font-size: clamp(25px, 4vw, 36px);
+      font-weight: 650;
+      letter-spacing: -1.2px;
+    }
+
+    .lesson h3 {
+      margin: 28px 0 9px;
+      font-size: 17px;
+    }
+
+    .lesson p, .lesson li {
+      color: #53606d;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .lesson ul { padding-left: 21px; }
+    .lesson li + li { margin-top: 7px; }
+
+    pre {
+      overflow-x: auto;
+      margin: 19px 0 0;
+      padding: 20px;
+      border-radius: 12px;
+      color: #eff5fb;
+      background: #17212b;
+      font: 13px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+
+    .back-link {
+      display: inline-flex;
+      margin: 0 0 90px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      color: white;
+      background: var(--ink);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    @media (max-width: 720px) {
+      :root { --nav-height: 66px; }
+      .nav, main { width: calc(100% - 36px); }
+      h1 { letter-spacing: -2.5px; }
+      .intro-copy { font-size: 16px; }
+      .lesson { margin-bottom: 45px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        northstar
+      </a>
+      <a href="index.html">Back to stories</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A little about me</p>
+      <h1>Hello, I’m [FAZAL WAHID].</h1>
+      <p class="intro-copy">HI THIS IS ME FAZAL WAHID STUDENT OF  COMPUTER SCIENCE. I AM INTRUSTED IN WEB DEVELOPMENT AND TECHNOLOGIES,I AM TRYING DIFFERENT TYPE OF AMAIZING TECHNOLOGIES IN UI DESIGN'I CREATED THIS DEDICATED TO IMPRESSED FROM AWS HOME PAGE CARD ANIMATIONS  </p>
+    </section>
+
+    <article class="lesson">
+      <h2>How the scrolling card animation works</h2>
+      <p>The four story cards share one frame. At the start they are stacked, with a small offset so you can see the cards behind the top one. As you scroll through the tall story section, each card in turn slides up and the next card is revealed.</p>
+
+      <h3>1. Make a scroll runway</h3>
+      <p>The <code>.stories</code> section is taller than the viewport. That extra height gives the animation time to progress while the card frame remains pinned.</p>
+
+      <h3>2. Pin one frame and stack the cards</h3>
+      <p><code>.story-stage</code> uses <code>position: sticky</code> to stay in view. Each <code>.story-card</code> uses <code>position: absolute</code> to occupy the same frame. The cards are layered by <code>z-index</code>; a small vertical offset hints that more cards are underneath.</p>
+
+      <h3>3. Turn scroll position into animation progress</h3>
+      <p>JavaScript measures how far the page has moved through the story section. It maps that distance to a number from <code>0</code> to <code>3</code> (the four cards have indexes 0 through 3). The current number identifies which card is being shown.</p>
+
+      <h3>4. Move cards with a CSS custom property</h3>
+      <p>For cards already passed, JavaScript updates <code>--offset</code> to slide them upward by one frame. Cards still ahead keep their small stacked offset. CSS applies the value with <code>translate3d</code>, so moving a card doesn’t reflow the others.</p>
+
+      <h3>5. Keep updates smooth and accessible</h3>
+      <ul>
+        <li><code>requestAnimationFrame</code> batches scroll updates to the browser’s next paint.</li>
+        <li>The <code>prefers-reduced-motion</code> setting keeps the cards stacked without the scrolling movement.</li>
+        <li>The CSS media query adjusts the frame and spacing for smaller screens.</li>
+      </ul>
+
+      <h3>The core idea, simplified</h3>
+      <pre><code>progress = scrollDistance / scrollableDistance * lastCardIndex
+offset = cardIsPassed ? -distancePassed * frameHeight : cardsAhead * stackGap</code></pre>
+    </article>
+
+    <a class="back-link" href="index.html">← Back to the story cards</a>
+  </main>
+</body>
+</html>
